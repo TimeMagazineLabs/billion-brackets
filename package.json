@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/TimeMagazine/billion-brackets#readme",
   "dependencies": {
-    "d3": "^5.9.2",
+    "d3-dsv": "^1.1.1",
     "object-hash": "^1.3.1"
   }
 }

@@ -1,7 +1,10 @@
-teams <- read.csv("./data/teams_2019.csv", stringsAsFactors = F)
+library(knitr)
+library(kableExtra)
 
-brackets_straight <- read.csv("./results/brackets_straight_odds.csv", stringsAsFactors = F)
-brackets_square_root <- read.csv("./results/brackets_square_root.csv", stringsAsFactors = F)
+teams <- read.csv("./data/teams_2019.csv", stringsAsFactors = F)
+team_names <- teams$team
+
+brackets_diff <- read.csv("./results/brackets.csv", stringsAsFactors = F)
 
 getWinnerDistribution <- function(brackets) {
   winners <- setNames(as.data.frame(table(brackets$winner)), c("team", "wins"))
@@ -10,4 +13,29 @@ getWinnerDistribution <- function(brackets) {
   return(winners);
 }
 
-winners_square_root <- getWinnerDistribution(brackets_square_root)
+winners_diff <- getWinnerDistribution(brackets_diff)
+
+id_to_team <- function(id) {
+  return(team_names[id + 1])
+}
+
+visualizePrediction <- function(index) {
+  ids = brackets_diff[index,4:66];
+  names = as.character(lapply(ids, id_to_team))
+  
+  bracketTable <- data.frame(
+    "Round 1" = team_names,
+    "Round 2" = unlist(c(rbind(lapply(names[1:32], function(x) rep(x,2))))),
+    "Sweet 16" = unlist(c(rbind(lapply(names[33:48], function(x) rep(x,4))))),
+    "Elite Eight" = unlist(c(rbind(lapply(names[49:56], function(x) rep(x,8))))),
+    "Final Four" = unlist(c(rbind(lapply(names[57:60], function(x) rep(x,16))))),
+    "Championship" = unlist(c(rbind(lapply(names[61:62], function(x) rep(x,32))))),
+    "Winner" = unlist(c(rbind(lapply(names[63], function(x) rep(x,64)))))
+  )
+  
+  kable(bracketTable, align = "l") %>%
+    kable_styling(full_width = F) %>%
+    collapse_rows(columns = 1:7, valign = "middle")
+}
+
+visualizePrediction(100010)

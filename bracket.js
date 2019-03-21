@@ -1,8 +1,6 @@
 const fs = require('fs');
-const d3 = require('d3');
 const ohash = require('object-hash');
-
-let ticker = 0;
+const d3 = require('d3-dsv');
 
 // this is a simple array of the 64 teams identified by name, seed, conference ...
 let teams = d3.csvParse(fs.readFileSync('./data/teams_2019.csv', 'utf8'));
@@ -13,23 +11,31 @@ teams.forEach((d, i) => {
 	d.id = i;
 });
 
-let hash_table = {}; // check for dupes
-
-// this is a flat array of the 63 games with ids linking to previous and next games
+// this is a flat array of the 63 games with ids linking to previous and next games, generated from above by ./data/csvToJSON.js
 let blank = require('./data/bracket.json');
 
-// choose between two teams, armed only with their initial seeds
-// `noise` runs from 0 [always choose higher seed] to 1 [coin flip]
-// any value between 0 and 1 is a relative degree of randomness weighted by the brackets
+let ticker = 0; // counts brackets calculated, including via recursion
 
-let choose = function(game, noise) {
+let csvKeys = Object.keys(blank);
+csvKeys.unshift("winner");
+csvKeys.unshift("hash");
+
+// we'll append to the csv file with each run in case we get interrupted, but only need headers once 
+if (!fs.existsSync('./results/brackets.csv')) {
+	fs.appendFileSync('./results/brackets.csv', csvKeys.join(",") + "\n");
+}
+
+let hash_table = {}; // check for dupes
+
+// choose between two teams, armed only with their initial seeds
+let choose = function(game) {
 	let indexA = game.A.id;
 	let indexB = game.B.id;
 
 	let seedA = teams[indexA].seed;
 	let seedB = teams[indexB].seed;
 
-	if (seedA == seedB) {
+	if (seedA == seedB) { // if equal, we'll recurse
 		return null;
 	}
 
@@ -48,6 +54,7 @@ let choose = function(game, noise) {
 	return (Math.random() < oddsA ? indexA : indexB);
 }
 
+// populate the next game with the winner of this one unless it's the championship
 let advanceWinner = function(bracket, game_id, winner_id) {
 	let game = bracket[game_id];
 	game.winner.id = winner_id;
@@ -66,6 +73,7 @@ let advanceWinner = function(bracket, game_id, winner_id) {
 	return bracket;
 }
 
+// core function
 let computeBracket = function(starting_bracket) {
 	if (!starting_bracket) {
 		starting_bracket = blank;
@@ -76,7 +84,7 @@ let computeBracket = function(starting_bracket) {
 	ticker += 1;
 
 	if (ticker % 1000 == 0) {
-		console.log(ticker);
+		console.log(ticker, "brackets");
 	}
 
 	let game_ids = Object.keys(bracket);
@@ -93,20 +101,15 @@ let computeBracket = function(starting_bracket) {
 		if (winner_id !== null) {
 			bracket = advanceWinner(bracket, game_id, winner_id);	
 		} else {
-			// console.log("Bracket", bracket.id + ": Tie in", game_id, "between", game.A.team, "and", game.B.team);
-
+			// recursively choose one winner and then continue with the other
 			bracket = advanceWinner(bracket, game_id, game.B.id);	
-			// console.log(bracket.id, game);
-			// console.log("(Tie went to", game.B.team + ")");
 			computeBracket(bracket);
 
 			bracket = advanceWinner(bracket, game_id, game.A.id);	
-			// console.log(bracket.id, game);
-			// console.log("(Tie went to", game.A.team + ")");
 		}
 	});
 
-	small_bracket = serialize(bracket);
+	let small_bracket = serialize(bracket);
 
 	if (hash_table.hasOwnProperty(small_bracket.hash)) {
 		console.log("Duplicate:", small_bracket.hash);
@@ -149,12 +152,7 @@ let serialize = function(bracket) {
 	}
 }
 
-let csvKeys = Object.keys(blank);
-csvKeys.unshift("winner");
-csvKeys.unshift("hash");
-
-// fs.writeFileSync('./results/brackets.csv', csvKeys.join(",") + "\n");
-
+// EXECUTE THE CODE! You can break any time and resume
 for (let n = 0; n < 100000000; n += 1) {
 	computeBracket();
 }

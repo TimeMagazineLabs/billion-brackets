@@ -12,3 +12,8 @@ Filling out an NCAA bracket involves making 63 binary decisions, meaning there a
 	node bracket.js
 
 
+
+## License
+MIT
+
+
