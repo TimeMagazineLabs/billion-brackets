@@ -11,7 +11,13 @@ Filling out an NCAA bracket involves making 63 binary decisions, meaning there a
 	npm install
 	node bracket.js
 
+## Under the hood
 
+The only really important function here is [`choose`](https://github.com/TimeMagazine/billion-brackets/blob/master/bracket.js#L31), which determines the weight of the randomized selection for each game based on the seeds. You're welcome to fuss with it. The current algo is a linear decline from 50% for each point difference in seeds. 
+
+## Fact-Checking in R
+
+The R project is a single script that loads the brackets and tallies them as a sanity check. It can also visualize any given row in a clunky HTML table.
 
 ## License
 MIT
