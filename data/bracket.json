@@ -1,9 +1,11 @@
 {
+  "id": null,
   "game_0": {
     "round": 1,
     "id": "game_0",
     "previous": null,
     "next": "game_32",
+    "next_side": "A",
     "region": "East",
     "A": {
       "id": 0,
@@ -12,6 +14,10 @@
     "B": {
       "id": 1,
       "team": "North Dakota State"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_1": {
@@ -19,6 +25,7 @@
     "id": "game_1",
     "previous": null,
     "next": "game_32",
+    "next_side": "B",
     "region": "East",
     "A": {
       "id": 2,
@@ -27,6 +34,10 @@
     "B": {
       "id": 3,
       "team": "UCF"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_2": {
@@ -34,6 +45,7 @@
     "id": "game_2",
     "previous": null,
     "next": "game_33",
+    "next_side": "A",
     "region": "East",
     "A": {
       "id": 4,
@@ -42,6 +54,10 @@
     "B": {
       "id": 5,
       "team": "Liberty"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_3": {
@@ -49,6 +65,7 @@
     "id": "game_3",
     "previous": null,
     "next": "game_33",
+    "next_side": "B",
     "region": "East",
     "A": {
       "id": 6,
@@ -57,6 +74,10 @@
     "B": {
       "id": 7,
       "team": "Saint Louis"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_4": {
@@ -64,6 +85,7 @@
     "id": "game_4",
     "previous": null,
     "next": "game_34",
+    "next_side": "A",
     "region": "East",
     "A": {
       "id": 8,
@@ -72,6 +94,10 @@
     "B": {
       "id": 9,
       "team": "Belmont"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_5": {
@@ -79,6 +105,7 @@
     "id": "game_5",
     "previous": null,
     "next": "game_34",
+    "next_side": "B",
     "region": "East",
     "A": {
       "id": 10,
@@ -87,6 +114,10 @@
     "B": {
       "id": 11,
       "team": "Yale"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_6": {
@@ -94,6 +125,7 @@
     "id": "game_6",
     "previous": null,
     "next": "game_35",
+    "next_side": "A",
     "region": "East",
     "A": {
       "id": 12,
@@ -102,6 +134,10 @@
     "B": {
       "id": 13,
       "team": "Minnesota"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_7": {
@@ -109,6 +145,7 @@
     "id": "game_7",
     "previous": null,
     "next": "game_35",
+    "next_side": "B",
     "region": "East",
     "A": {
       "id": 14,
@@ -117,6 +154,10 @@
     "B": {
       "id": 15,
       "team": "Bradley"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_8": {
@@ -124,6 +165,7 @@
     "id": "game_8",
     "previous": null,
     "next": "game_36",
+    "next_side": "A",
     "region": "West",
     "A": {
       "id": 16,
@@ -132,6 +174,10 @@
     "B": {
       "id": 17,
       "team": "Fairleigh Dickinson"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_9": {
@@ -139,6 +185,7 @@
     "id": "game_9",
     "previous": null,
     "next": "game_36",
+    "next_side": "B",
     "region": "West",
     "A": {
       "id": 18,
@@ -147,6 +194,10 @@
     "B": {
       "id": 19,
       "team": "Baylor"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_10": {
@@ -154,6 +205,7 @@
     "id": "game_10",
     "previous": null,
     "next": "game_37",
+    "next_side": "A",
     "region": "West",
     "A": {
       "id": 20,
@@ -162,6 +214,10 @@
     "B": {
       "id": 21,
       "team": "Murray State"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_11": {
@@ -169,6 +225,7 @@
     "id": "game_11",
     "previous": null,
     "next": "game_37",
+    "next_side": "B",
     "region": "West",
     "A": {
       "id": 22,
@@ -177,6 +234,10 @@
     "B": {
       "id": 23,
       "team": "Vermont"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_12": {
@@ -184,6 +245,7 @@
     "id": "game_12",
     "previous": null,
     "next": "game_38",
+    "next_side": "A",
     "region": "West",
     "A": {
       "id": 24,
@@ -192,6 +254,10 @@
     "B": {
       "id": 25,
       "team": "Arizona State"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_13": {
@@ -199,6 +265,7 @@
     "id": "game_13",
     "previous": null,
     "next": "game_38",
+    "next_side": "B",
     "region": "West",
     "A": {
       "id": 26,
@@ -207,6 +274,10 @@
     "B": {
       "id": 27,
       "team": "Northern Kentucky"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_14": {
@@ -214,6 +285,7 @@
     "id": "game_14",
     "previous": null,
     "next": "game_39",
+    "next_side": "A",
     "region": "West",
     "A": {
       "id": 28,
@@ -222,6 +294,10 @@
     "B": {
       "id": 29,
       "team": "Florida"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_15": {
@@ -229,6 +305,7 @@
     "id": "game_15",
     "previous": null,
     "next": "game_39",
+    "next_side": "B",
     "region": "West",
     "A": {
       "id": 30,
@@ -237,6 +314,10 @@
     "B": {
       "id": 31,
       "team": "Montana"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_16": {
@@ -244,14 +325,19 @@
     "id": "game_16",
     "previous": null,
     "next": "game_40",
-    "region": "Midwest",
+    "next_side": "A",
+    "region": "South",
     "A": {
       "id": 32,
-      "team": "UNC"
+      "team": "Virginia"
     },
     "B": {
       "id": 33,
-      "team": "Iona"
+      "team": "Gardner-Webb"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_17": {
@@ -259,14 +345,19 @@
     "id": "game_17",
     "previous": null,
     "next": "game_40",
-    "region": "Midwest",
+    "next_side": "B",
+    "region": "South",
     "A": {
       "id": 34,
-      "team": "Utah State"
+      "team": "Ole Miss"
     },
     "B": {
       "id": 35,
-      "team": "Washington"
+      "team": "Oklahoma"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_18": {
@@ -274,14 +365,19 @@
     "id": "game_18",
     "previous": null,
     "next": "game_41",
-    "region": "Midwest",
+    "next_side": "A",
+    "region": "South",
     "A": {
       "id": 36,
-      "team": "Auburn"
+      "team": "Wisconsin"
     },
     "B": {
       "id": 37,
-      "team": "New Mexico State"
+      "team": "Oregon"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_19": {
@@ -289,14 +385,19 @@
     "id": "game_19",
     "previous": null,
     "next": "game_41",
-    "region": "Midwest",
+    "next_side": "B",
+    "region": "South",
     "A": {
       "id": 38,
-      "team": "Kansas"
+      "team": "Kansas State"
     },
     "B": {
       "id": 39,
-      "team": "Northeastern"
+      "team": "UC-Irvine"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_20": {
@@ -304,14 +405,19 @@
     "id": "game_20",
     "previous": null,
     "next": "game_42",
-    "region": "Midwest",
+    "next_side": "A",
+    "region": "South",
     "A": {
       "id": 40,
-      "team": "Iowa State"
+      "team": "Villanova"
     },
     "B": {
       "id": 41,
-      "team": "Ohio State"
+      "team": "Saint Mary's"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_21": {
@@ -319,14 +425,19 @@
     "id": "game_21",
     "previous": null,
     "next": "game_42",
-    "region": "Midwest",
+    "next_side": "B",
+    "region": "South",
     "A": {
       "id": 42,
-      "team": "Houston"
+      "team": "Purdue"
     },
     "B": {
       "id": 43,
-      "team": "Georgia State"
+      "team": "Old Dominion"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_22": {
@@ -334,14 +445,19 @@
     "id": "game_22",
     "previous": null,
     "next": "game_43",
-    "region": "Midwest",
+    "next_side": "A",
+    "region": "South",
     "A": {
       "id": 44,
-      "team": "Wofford"
+      "team": "Cincinnati"
     },
     "B": {
       "id": 45,
-      "team": "Seton Hall"
+      "team": "Iowa"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_23": {
@@ -349,14 +465,19 @@
     "id": "game_23",
     "previous": null,
     "next": "game_43",
-    "region": "Midwest",
+    "next_side": "B",
+    "region": "South",
     "A": {
       "id": 46,
-      "team": "Kentucky"
+      "team": "Tennessee"
     },
     "B": {
       "id": 47,
-      "team": "Abilene Christian"
+      "team": "Colgate"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_24": {
@@ -364,14 +485,19 @@
     "id": "game_24",
     "previous": null,
     "next": "game_44",
-    "region": "South",
+    "next_side": "A",
+    "region": "Midwest",
     "A": {
       "id": 48,
-      "team": "Virginia"
+      "team": "UNC"
     },
     "B": {
       "id": 49,
-      "team": "Gardner-Webb"
+      "team": "Iona"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_25": {
@@ -379,14 +505,19 @@
     "id": "game_25",
     "previous": null,
     "next": "game_44",
-    "region": "South",
+    "next_side": "B",
+    "region": "Midwest",
     "A": {
       "id": 50,
-      "team": "Ole Miss"
+      "team": "Utah State"
     },
     "B": {
       "id": 51,
-      "team": "Oklahoma"
+      "team": "Washington"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_26": {
@@ -394,14 +525,19 @@
     "id": "game_26",
     "previous": null,
     "next": "game_45",
-    "region": "South",
+    "next_side": "A",
+    "region": "Midwest",
     "A": {
       "id": 52,
-      "team": "Wisconsin"
+      "team": "Auburn"
     },
     "B": {
       "id": 53,
-      "team": "Oregon"
+      "team": "New Mexico State"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_27": {
@@ -409,14 +545,19 @@
     "id": "game_27",
     "previous": null,
     "next": "game_45",
-    "region": "South",
+    "next_side": "B",
+    "region": "Midwest",
     "A": {
       "id": 54,
-      "team": "Kansas State"
+      "team": "Kansas"
     },
     "B": {
       "id": 55,
-      "team": "UC-Irvine"
+      "team": "Northeastern"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_28": {
@@ -424,14 +565,19 @@
     "id": "game_28",
     "previous": null,
     "next": "game_46",
-    "region": "South",
+    "next_side": "A",
+    "region": "Midwest",
     "A": {
       "id": 56,
-      "team": "Villanova"
+      "team": "Iowa State"
     },
     "B": {
       "id": 57,
-      "team": "Saint Mary's"
+      "team": "Ohio State"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_29": {
@@ -439,14 +585,19 @@
     "id": "game_29",
     "previous": null,
     "next": "game_46",
-    "region": "South",
+    "next_side": "B",
+    "region": "Midwest",
     "A": {
       "id": 58,
-      "team": "Purdue"
+      "team": "Houston"
     },
     "B": {
       "id": 59,
-      "team": "Old Dominion"
+      "team": "Georgia State"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_30": {
@@ -454,14 +605,19 @@
     "id": "game_30",
     "previous": null,
     "next": "game_47",
-    "region": "South",
+    "next_side": "A",
+    "region": "Midwest",
     "A": {
       "id": 60,
-      "team": "Cincinnati"
+      "team": "Wofford"
     },
     "B": {
       "id": 61,
-      "team": "Iowa"
+      "team": "Seton Hall"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_31": {
@@ -469,14 +625,19 @@
     "id": "game_31",
     "previous": null,
     "next": "game_47",
-    "region": "South",
+    "next_side": "B",
+    "region": "Midwest",
     "A": {
       "id": 62,
-      "team": "Tennessee"
+      "team": "Kentucky"
     },
     "B": {
       "id": 63,
-      "team": "Colgate"
+      "team": "Abilene Christian"
+    },
+    "winner": {
+      "id": null,
+      "team": null
     }
   },
   "game_32": {
@@ -487,12 +648,17 @@
       "game_1"
     ],
     "next": "game_48",
+    "next_side": "A",
     "region": "East",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -505,12 +671,17 @@
       "game_3"
     ],
     "next": "game_48",
+    "next_side": "B",
     "region": "East",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -523,12 +694,17 @@
       "game_5"
     ],
     "next": "game_49",
+    "next_side": "A",
     "region": "East",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -541,12 +717,17 @@
       "game_7"
     ],
     "next": "game_49",
+    "next_side": "B",
     "region": "East",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -559,12 +740,17 @@
       "game_9"
     ],
     "next": "game_50",
+    "next_side": "A",
     "region": "West",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -577,12 +763,17 @@
       "game_11"
     ],
     "next": "game_50",
+    "next_side": "B",
     "region": "West",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -595,12 +786,17 @@
       "game_13"
     ],
     "next": "game_51",
+    "next_side": "A",
     "region": "West",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -613,12 +809,17 @@
       "game_15"
     ],
     "next": "game_51",
+    "next_side": "B",
     "region": "West",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -631,12 +832,17 @@
       "game_17"
     ],
     "next": "game_52",
-    "region": "Midwest",
+    "next_side": "A",
+    "region": "South",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -649,12 +855,17 @@
       "game_19"
     ],
     "next": "game_52",
-    "region": "Midwest",
+    "next_side": "B",
+    "region": "South",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -667,12 +878,17 @@
       "game_21"
     ],
     "next": "game_53",
-    "region": "Midwest",
+    "next_side": "A",
+    "region": "South",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -685,12 +901,17 @@
       "game_23"
     ],
     "next": "game_53",
-    "region": "Midwest",
+    "next_side": "B",
+    "region": "South",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -703,12 +924,17 @@
       "game_25"
     ],
     "next": "game_54",
-    "region": "South",
+    "next_side": "A",
+    "region": "Midwest",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -721,12 +947,17 @@
       "game_27"
     ],
     "next": "game_54",
-    "region": "South",
+    "next_side": "B",
+    "region": "Midwest",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -739,12 +970,17 @@
       "game_29"
     ],
     "next": "game_55",
-    "region": "South",
+    "next_side": "A",
+    "region": "Midwest",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -757,12 +993,17 @@
       "game_31"
     ],
     "next": "game_55",
-    "region": "South",
+    "next_side": "B",
+    "region": "Midwest",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -775,12 +1016,17 @@
       "game_33"
     ],
     "next": "game_56",
+    "next_side": "A",
     "region": "East",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -793,12 +1039,17 @@
       "game_35"
     ],
     "next": "game_56",
+    "next_side": "B",
     "region": "East",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -811,12 +1062,17 @@
       "game_37"
     ],
     "next": "game_57",
+    "next_side": "A",
     "region": "West",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -829,12 +1085,17 @@
       "game_39"
     ],
     "next": "game_57",
+    "next_side": "B",
     "region": "West",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -847,12 +1108,17 @@
       "game_41"
     ],
     "next": "game_58",
-    "region": "Midwest",
+    "next_side": "A",
+    "region": "South",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -865,12 +1131,17 @@
       "game_43"
     ],
     "next": "game_58",
-    "region": "Midwest",
+    "next_side": "B",
+    "region": "South",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -883,12 +1154,17 @@
       "game_45"
     ],
     "next": "game_59",
-    "region": "South",
+    "next_side": "A",
+    "region": "Midwest",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -901,12 +1177,17 @@
       "game_47"
     ],
     "next": "game_59",
-    "region": "South",
+    "next_side": "B",
+    "region": "Midwest",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -919,12 +1200,17 @@
       "game_49"
     ],
     "next": "game_60",
+    "next_side": "A",
     "region": "East",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -937,12 +1223,17 @@
       "game_51"
     ],
     "next": "game_60",
+    "next_side": "B",
     "region": "West",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -955,12 +1246,17 @@
       "game_53"
     ],
     "next": "game_61",
-    "region": "Midwest",
+    "next_side": "A",
+    "region": "South",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -973,12 +1269,17 @@
       "game_55"
     ],
     "next": "game_61",
-    "region": "South",
+    "next_side": "B",
+    "region": "Midwest",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -991,12 +1292,17 @@
       "game_57"
     ],
     "next": "game_62",
+    "next_side": "A",
     "region": "East_West",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -1009,12 +1315,17 @@
       "game_59"
     ],
     "next": "game_62",
-    "region": "Midwest_South",
+    "next_side": "B",
+    "region": "South_Midwest",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }
@@ -1027,12 +1338,17 @@
       "game_61"
     ],
     "next": null,
-    "region": "East_West_Midwest_South",
+    "next_side": null,
+    "region": "East_West_South_Midwest",
     "A": {
       "id": null,
       "team": null
     },
     "B": {
+      "id": null,
+      "team": null
+    },
+    "winner": {
       "id": null,
       "team": null
     }

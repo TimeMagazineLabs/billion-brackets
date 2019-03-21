@@ -1,7 +1,7 @@
 const fs = require('fs');
 const d3 = require('d3')
 
-let bracket = {};
+let bracket = { id: null };
 
 // this is a simple array of the 64 teams identified by name, seed, conference ...
 let teams = d3.csvParse(fs.readFileSync('./teams_2019.csv', 'utf8'));
@@ -23,12 +23,17 @@ for (let c = 0; c < 63; c += 1) {
 		id: id,
 		previous: null,
 		next: null,
+		next_side: null,
 		region: null,
 		A: {
 			id: null,
 			team: null
 		},
 		B: {
+			id: null,
+			team: null
+		},
+		winner: {
 			id: null,
 			team: null
 		}
@@ -39,9 +44,11 @@ for (let c = 0; c < 63; c += 1) {
 for (let c = 0; c < teams.length; c += 2) {
 	let id = "game_" + Math.floor(c / 2);
 	let next_id = "game_" + (Math.floor(c / 4) + 32);
+	let next_side = (c % 4 < 2 ? "A" : "B");
 
 	bracket[id].round = 1;
 	bracket[id].next = next_id;
+	bracket[id].next_side = next_side;
 	bracket[next_id].previous = bracket[next_id].previous || [];
 	bracket[next_id].previous.push(id);
 	bracket[id].region = teams[c].region;
@@ -62,15 +69,15 @@ let game_number = 32;
 
 		if (game_count !== 1) {
 			let next_id = "game_" + (game_number + game_count + Math.floor(i / 2));
-			bracket[id].next = next_id;		
+			let next_side = (i % 2 == 0 ? "A" : "B");
+			bracket[id].next = next_id;
+			bracket[id].next_side = next_side;		
 			bracket[next_id].previous = bracket[next_id].previous || [];
 			bracket[next_id].previous.push(id);
 		}
-		
+
 		let regionA = bracket[bracket[id].previous[0]].region;
 		let regionB = bracket[bracket[id].previous[1]].region;
-
-		console.log(bracket[id].previous, regionA, regionB);
 
 		if (regionA == regionB) {
 			bracket[id].region = regionA;
