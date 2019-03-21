@@ -1,0 +1,55 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1363,         45]
+NotebookOptionsPosition[       986,         31]
+NotebookOutlinePosition[      1325,         46]
+CellTagsIndexPosition[      1282,         43]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"seedA", " ", "=", " ", "2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"seedB", " ", "=", " ", "15"}], ";"}]}], "Code",
+ CellChangeTimes->{{3.762118494680533*^9, 3.762118503815062*^9}, {
+  3.762118642700136*^9, 3.762118649971047*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"3811a9aa-f5e8-414b-90fc-220dddd90f7b"],
+
+Cell[BoxData[""], "Code",ExpressionUUID->"acb02ba8-ed87-491e-ae4f-48d45913793b"]
+},
+WindowSize->{808, 755},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (November 18, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 341, 7, 72, "Code",ExpressionUUID->"3811a9aa-f5e8-414b-90fc-220dddd90f7b"],
+Cell[902, 29, 80, 0, 52, "Code",ExpressionUUID->"acb02ba8-ed87-491e-ae4f-48d45913793b"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
