@@ -2,7 +2,6 @@ const fs = require('fs');
 const d3 = require('d3');
 const ohash = require('object-hash');
 
-let brackets = {};
 let ticker = 0;
 
 // this is a simple array of the 64 teams identified by name, seed, conference ...
@@ -13,6 +12,8 @@ teams.forEach((d, i) => {
 	d.seed = +d.seed;
 	d.id = i;
 });
+
+let hash_table = {}; // check for dupes
 
 // this is a flat array of the 63 games with ids linking to previous and next games
 let blank = require('./data/bracket.json');
@@ -25,15 +26,26 @@ let choose = function(game, noise) {
 	let indexA = game.A.id;
 	let indexB = game.B.id;
 
-	// console.log(game);
-
 	let seedA = teams[indexA].seed;
 	let seedB = teams[indexB].seed;
-	if (seedA != seedB) {
-		return (seedA < seedB ? indexA : indexB);
-		return;
+
+	if (seedA == seedB) {
+		return null;
 	}
-	return null;
+
+	let diff = Math.abs(seedA - seedB);
+	let oddsA = 0;
+	let oddsB = 0;
+
+	if (seedA < seedB) {
+		oddsA = 0.5 + diff / 32;
+		oddsB = 1 - oddsA;
+	} else {
+		oddsB = 0.5 + diff / 32;
+		oddsA = 1 - oddsB;
+	}
+
+	return (Math.random() < oddsA ? indexA : indexB);
 }
 
 let advanceWinner = function(bracket, game_id, winner_id) {
@@ -59,10 +71,13 @@ let computeBracket = function(starting_bracket) {
 		starting_bracket = blank;
 	}
 	// Deep Clone: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
-	// let bracket = Object.assign({}, starting_bracket); // make a fresh object
 	let bracket = JSON.parse(JSON.stringify(starting_bracket)); // make a fresh object
 	bracket.id = "b" + ticker;
 	ticker += 1;
+
+	if (ticker % 1000 == 0) {
+		console.log(ticker);
+	}
 
 	let game_ids = Object.keys(bracket);
 	game_ids.shift(); // remove id
@@ -78,61 +93,70 @@ let computeBracket = function(starting_bracket) {
 		if (winner_id !== null) {
 			bracket = advanceWinner(bracket, game_id, winner_id);	
 		} else {
-			console.log("Bracket", bracket.id + ": Tie in", game_id, "between", game.A.team, "and", game.B.team);
+			// console.log("Bracket", bracket.id + ": Tie in", game_id, "between", game.A.team, "and", game.B.team);
 
 			bracket = advanceWinner(bracket, game_id, game.B.id);	
-			console.log(bracket);
-			console.log(bracket.id, game);
-			console.log("(Tie went to", game.B.team + ")");
+			// console.log(bracket.id, game);
+			// console.log("(Tie went to", game.B.team + ")");
 			computeBracket(bracket);
 
 			bracket = advanceWinner(bracket, game_id, game.A.id);	
-			console.log(bracket.id, game);
-			console.log("(Tie went to", game.A.team + ")");
+			// console.log(bracket.id, game);
+			// console.log("(Tie went to", game.A.team + ")");
 		}
 	});
 
 	small_bracket = serialize(bracket);
 
-	brackets[small_bracket.hash] = {
-		id: small_bracket.id,
-		winner: small_bracket.winner,
-		results: small_bracket.verbose
-	};
+	if (hash_table.hasOwnProperty(small_bracket.hash)) {
+		console.log("Duplicate:", small_bracket.hash);
+		fs.writeFileSync("./duplicates/" + small_bracket.hash + ".json", JSON.stringify(small_bracket, null, 2));
+	} else {
+		hash_table[small_bracket.hash] = 1;
+		let toWrite = [
+			small_bracket.hash,
+			small_bracket.winner,
+			small_bracket.id,
+		].concat(small_bracket.winner_ids);
+
+		fs.appendFileSync('./results/brackets.csv', toWrite.join(",") + "\n");
+	}
 };
 
 let serialize = function(bracket) {
-	let typed = new Uint8Array(63);
-	let verbose = [];
 	let game_ids = Object.keys(bracket);
 	game_ids.shift(); // remove id
+	let winner_ids = [];
+	let verbose = [];
+	// let typed = new Uint8Array(63);
 
 	game_ids.forEach((game_id, g) => {
-		typed[g] = bracket[game_id].winner.id;
+		// typed[g] = bracket[game_id].winner.id;
+		winner_ids.push(bracket[game_id].winner.id);
 		verbose.push([game_id, bracket[game_id].winner.team]);
 	});
 
-	const buffer = new Buffer.from(typed);
-
-	let hashed = ohash(typed);
-
-	let json = new Buffer.from(buffer);
-
-	fs.writeFileSync("test.txt", buffer);
+	let hashed = ohash(winner_ids);
 
 	return {
 		id: bracket.id,
 		winner: bracket["game_62"].winner.team,
-		uint8: typed,
+		// uint8: typed,
+		winner_ids: winner_ids,
 		verbose: verbose,
-		buffer: buffer,
+		// buffer: buffer,
 		hash: hashed
 	}
 }
 
+let csvKeys = Object.keys(blank);
+csvKeys.unshift("winner");
+csvKeys.unshift("hash");
 
-computeBracket();
+// fs.writeFileSync('./results/brackets.csv', csvKeys.join(",") + "\n");
 
-fs.writeFileSync("./test.json", JSON.stringify(brackets, null, 2));
+for (let n = 0; n < 100000000; n += 1) {
+	computeBracket();
+}
 
-
+console.log("Finished", ticker, "brackets");
