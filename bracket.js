@@ -21,8 +21,8 @@ csvKeys.unshift("winner");
 csvKeys.unshift("hash");
 
 // we'll append to the csv file with each run in case we get interrupted, but only need headers once 
-if (!fs.existsSync('./results/brackets.csv')) {
-	fs.appendFileSync('./results/brackets.csv', csvKeys.join(",") + "\n");
+if (!fs.existsSync('./brackets/brackets.csv')) {
+	fs.appendFileSync('./brackets/brackets.csv', csvKeys.join(",") + "\n");
 }
 
 let hash_table = {}; // check for dupes
@@ -122,7 +122,7 @@ let computeBracket = function(starting_bracket) {
 			small_bracket.id,
 		].concat(small_bracket.winner_ids);
 
-		fs.appendFileSync('./results/brackets.csv', toWrite.join(",") + "\n");
+		fs.appendFileSync('./brackets/brackets.csv', toWrite.join(",") + "\n");
 	}
 };
 
