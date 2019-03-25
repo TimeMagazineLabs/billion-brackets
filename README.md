@@ -19,11 +19,11 @@ This will continue to append new random brackets to `brackets/brackets.csv` unti
 
 For each completed game, run the `addWinner.js` script with two arguments: The `--game_id` and the `--winner_id`. The script will politely complain if you select a winner who was not playing in that game.
 
-The games are ordered from 0 to 63 in ascending rounds, always sorted by East, West, South and Midwest. The easiest thing to do is open [`results/results_2019.csv`](results/results.csv) and look up the relevant game and the winner's id, also an integer from 0 to 63.
+The games are ordered from 0 to 63 in ascending rounds, always sorted by East, West, South and Midwest. The easiest thing to do is open [`results/results_2019.csv`](results/results_2019.csv) and look up the relevant game and the winner's id, also an integer from 0 to 63.
 
 ## Scoring the brackets
 
-Once the [`results/results.csv`](results/results.csv) file is up-to-date, just run this command, then go get coffee for about 15 minutes.
+Once the [`results/results_2019.csv`](results/results_2019.csv) file is up-to-date, just run this command, then go get coffee for about 15 minutes.
 
 	node evaluateResults.js
 
