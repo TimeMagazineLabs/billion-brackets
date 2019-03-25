@@ -1,7 +1,6 @@
 .DS_Store
 
 duplicates/*
-results/*.csv
 scores/*.csv
 brackets/*.csv
 

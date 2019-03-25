@@ -10,6 +10,8 @@ Filling out an NCAA bracket involves making 63 binary decisions, meaning there a
 
 ### Generating random brackets
 
+This will continue to append new random brackets to `brackets/brackets.csv` until you quit.
+
 	npm install
 	node bracket.js
 
