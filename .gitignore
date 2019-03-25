@@ -3,6 +3,7 @@
 duplicates/*
 results/*.csv
 scores/*.csv
+brackets/*.csv
 
 # Logs
 logs
