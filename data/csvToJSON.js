@@ -1,7 +1,7 @@
 const fs = require('fs');
-const d3 = require('d3')
+const d3 = require('d3-dsv');
 
-let bracket = { id: null };
+let bracket = { id: null }; // a flat object with one key per game, not nested
 
 // this is a simple array of the 64 teams identified by name, seed, conference ...
 let teams = d3.csvParse(fs.readFileSync('./teams_2019.csv', 'utf8'));
