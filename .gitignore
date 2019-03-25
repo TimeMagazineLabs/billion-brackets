@@ -2,6 +2,7 @@
 
 duplicates/*
 results/*.csv
+scores/*.csv
 
 # Logs
 logs
