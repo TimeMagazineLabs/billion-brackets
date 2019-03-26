@@ -3,7 +3,7 @@ library(ggplot2)
 #teams <- read.csv("../data/teams_2019.csv", stringsAsFactors = F)
 #team_names <- teams$team
 
-scores <- read.csv("../scores/scores2.csv", stringsAsFactors = F)
+scores <- read.csv("../scores/scores.csv", stringsAsFactors = F)
 
 cumulative_percent <- function(df) {
   df$cumulative_percent <- 0;
@@ -39,9 +39,8 @@ summarize("round0")
 summarize("round1")
 summarize("possible", "possible")
 
-leaders = NROW(scores[scores$possible >= 180,])
-
-
+leadersCurrent = NROW(scores[scores$points >= 54,])
+leadersPossible = NROW(scores[scores$possible >= 180,])
 
 
 #brackets <- read.csv("../brackets/brackets.csv", stringsAsFactors = F)
