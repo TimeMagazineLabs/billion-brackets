@@ -35,7 +35,8 @@ The only really important function here is [`choose`](https://github.com/TimeMag
 
 ## Fact-Checking in R
 
-The [R project in `./analysis`](analysis) is a pair of scripts:
+The [R project in `./analysis`](analysis) has a few handy scripts:
++ [`sample.R`](analysis/sample.R) reduces the contents of `./brackets/brackets.csv` to exactly 10M, or however many you want
 + [`check.R`](analysis/check.R) loads the brackets and tallies them as a sanity check. It can also visualize any given row in a clunky HTML table.
 + [`results.R`](analysis/results.R) summarizes the scores after you run `./evaluateResults.js`.
 

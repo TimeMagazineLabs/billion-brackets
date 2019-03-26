@@ -5,21 +5,25 @@ let argv = require('minimist')(process.argv.slice(2));
 const results = d3.csvParse(fs.readFileSync('./results/results_2019.csv', 'utf8'));
 
 // we'll score this the usual way -- twice the points each round, starting with 1
-let points_per_game = {};
+let points_per_game_exp = {};
+let points_per_game_linear = {};
+let points_per_game_flat = {};
+
 let game_ids = [];
 let still_alive = {};
 let winners = {};
 
 results.forEach((d, i) => {
-	const p = Math.pow(2, 5 - Math.floor(Math.log(63 - i) / Math.log(2)));
-
 	let game_id = "game_" + i;
-
 	game_ids.push(game_id);
 
-	points_per_game[game_id] = p;
-	
-	// console.log(d.winner_id);
+	// reverse log of round: 32 `0`s, 16 `1`s, etc. 
+	const r = 5 - Math.floor(Math.log(63 - i) / Math.log(2));
+
+	// exponential score
+	points_per_game_exp[game_id] = Math.pow(2, r);
+	points_per_game_linear[game_id] = r + 1;
+	points_per_game_flat[game_id] = 1;
 
 	if (d.winner_id == '') {
 		winners[game_id] = null;
@@ -34,11 +38,24 @@ results.forEach((d, i) => {
 	}
 });
 
-const evaluateBracket = function(bracket) {
+const scoreBracket = function(bracket, scoring_system) {
 	let points = 0;
 	let futureLosses = 0;
 	let rounds = [0, 0, 0, 0, 0, 0];
-	let possible = 32 * 6; // 192
+	let points_per_game;
+
+	if (scoring_system == "linear") {
+		points_per_game = points_per_game_linear;
+	} else if (scoring_system == "flat") {
+		points_per_game = points_per_game_flat;
+	} else {
+		points_per_game = points_per_game_exp;
+	}
+
+	let possible = 0;
+	Object.values(points_per_game).forEach(d => {
+		possible += d;
+	});
 
 	game_ids.forEach(game_id => {
 		let prediction = bracket[game_id];
@@ -54,7 +71,7 @@ const evaluateBracket = function(bracket) {
 		} else {
 			if (prediction == winners[game_id]) {
 				points += points_per_game[game_id];
-				let round = Math.log(points_per_game[game_id]) / Math.log(2);
+				let round = Math.log(points_per_game_exp[game_id]) / Math.log(2);
 				rounds[round] += points_per_game[game_id];
 			} else {
 				possible -= points_per_game[game_id];
@@ -71,13 +88,14 @@ const evaluateBracket = function(bracket) {
 	}
 }
 
-module.exports = evaluateBracket;
+module.exports = scoreBracket;
 
 if (argv.test) {
+	argv.mode = argv.mode || "exp";
 	const test = d3.csvParse(fs.readFileSync('./brackets/test.csv', 'utf8'));
 
 	test.forEach(d => {
-		console.log(evaluateBracket(d));
+		console.log(scoreBracket(d, argv.mode));
 	});
 
 

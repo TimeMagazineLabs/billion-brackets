@@ -42,10 +42,10 @@ parser.on('data', function (bracket) {
 });
 
 parser.on('end', function () {
-	fs.copyFileSync(filename, "./scores/scores.csv");
+	fs.copyFileSync(filename, "./scores/scores2.csv");
 });
 
 
 // now pipe some data into it
-fs.createReadStream('./brackets/brackets.csv').pipe(parser);
+fs.createReadStream('./brackets/brackets_10000000.csv').pipe(parser);
 
