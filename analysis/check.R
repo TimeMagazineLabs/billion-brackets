@@ -4,7 +4,7 @@ library(kableExtra)
 teams <- read.csv("../data/teams_2019.csv", stringsAsFactors = F)
 team_names <- teams$team
 
-brackets <- read.csv("../results/brackets.csv", stringsAsFactors = F)
+brackets <- read.csv("../brackets/brackets.csv", stringsAsFactors = F)
 
 getWinnerDistribution <- function(brackets) {
   winners <- setNames(as.data.frame(table(brackets$winner)), c("team", "wins"))

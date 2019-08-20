@@ -6,7 +6,7 @@ const parser = csv({ columns: true });
 
 let count = 0;
 
-let csvKeys = [ "hash", "points", "possible", "future_losses", "round0", "round1", "round2", "round3", "round4", "round5" ];
+let csvKeys = [ "hash", "points", "possible", "round0", "round1", "round2", "round3", "round4", "round5" ];
 
 let filename = './scores/scores_' + (new Date()).getTime() + '.csv';
 
@@ -18,22 +18,10 @@ if (!fs.existsSync(filename)) {
 parser.on('data', function (bracket) {
 	let score = scoreBracket(bracket);
 
-	let toWrite = [ bracket.hash, score.points, score.possible, score.future_losses ];
+	let toWrite = [ bracket.hash, score.points, score.possible ];
 	toWrite = toWrite.concat(score.rounds);
 
 	fs.appendFileSync(filename, toWrite.join(",") + "\n");
-
-	if (score.rounds[0] == 32) {
-		console.log("Perfect Round 0");
-	}
-
-	if (score.rounds[1] == 32) {
-		console.log("Perfect Round 1");
-	}
-
-	if (score.points == 64) {
-		console.log("PERFECT SO FAR!!!");
-	}
 
 	count += 1;
 	if (count % 10000 == 0) {
@@ -42,10 +30,8 @@ parser.on('data', function (bracket) {
 });
 
 parser.on('end', function () {
-	fs.copyFileSync(filename, "./scores/scores2.csv");
+	fs.copyFileSync(filename, "./scores/scores_final.csv");
 });
 
-
 // now pipe some data into it
-fs.createReadStream('./brackets/brackets_10000000.csv').pipe(parser);
-
+fs.createReadStream('./brackets/brackets.csv').pipe(parser);

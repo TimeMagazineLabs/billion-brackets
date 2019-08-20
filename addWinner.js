@@ -53,12 +53,13 @@ if (game.teamA_id != argv.winner_id && game.teamB_id != argv.winner_id) {
 game.winner_id = argv.winner_id;
 game.winner = teams[argv.winner_id].team;
 
-let next_id = matchup.next;
-let next_side = matchup.next_side;
-let next_game = lookup.games[next_id];
-
-next_game["team" + next_side] = game.winner;
-next_game["team" + next_side + "_id"] = game.winner_id;
+if (argv.game_id != "game_62") {
+	let next_id = matchup.next;
+	let next_side = matchup.next_side;
+	let next_game = lookup.games[next_id];
+	next_game["team" + next_side] = game.winner;
+	next_game["team" + next_side + "_id"] = game.winner_id;
+}
 
 fs.writeFileSync("./results/results_2019.csv", d3.csvFormat(results));
 

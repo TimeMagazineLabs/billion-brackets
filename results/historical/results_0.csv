@@ -55,10 +55,10 @@ game_52,South,32,Virginia,37,Oregon,32,Virginia
 game_53,South,42,Purdue,46,Tennessee,42,Purdue
 game_54,Midwest,48,UNC,52,Auburn,52,Auburn
 game_55,Midwest,58,Houston,62,Kentucky,62,Kentucky
-game_56,East,0,Duke,14,Michigan State,14,Michigan State
-game_57,West,16,Gonzaga,26,Texas Tech,26,Texas Tech
-game_58,South,32,Virginia,42,Purdue,32,Virginia
-game_59,Midwest,52,Auburn,62,Kentucky,52,Auburn
-game_60,East_West,14,Michigan State,26,Texas Tech,26,Texas Tech
-game_61,South_Midwest,32,Virginia,52,Auburn,32,Virginia
-game_62,East_West_South_Midwest,26,Texas Tech,32,Virginia,32,Virginia
+game_56,East,0,Duke,14,Michigan State,,
+game_57,West,16,Gonzaga,26,Texas Tech,,
+game_58,South,32,Virginia,42,Purdue,,
+game_59,Midwest,52,Auburn,62,Kentucky,,
+game_60,East_West,,,,,,
+game_61,South_Midwest,,,,,,
+game_62,East_West_South_Midwest,,,,,,
